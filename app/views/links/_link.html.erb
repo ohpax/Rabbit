@@ -1,7 +1,8 @@
 <div class="link row clearfix">
   <h2>
+    <small><span class="glyphicon glyphicon-link"></span></small>
     <%= link_to link.title, link %> <br>
-    <small class="author">Submmited <%= time_ago_in_words(link.created_at) %> ago, by <%= link.user.name %></small>
+    <!-- <small class="author">Submmited <%= time_ago_in_words(link.created_at) %> ago, by <%= link.user.name %></small> -->
   </h2>
       <div class="btn-group">
       <a class="btn btn-default btn-sm" href="<%= link.url %>">Visit Link</a>

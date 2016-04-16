@@ -1,0 +1,8 @@
+<h1>Recent Lists</h1>
+ <% @lists.each do |list| %>
+        <h2>
+          <small><span class="glyphicon glyphicon-list"></span></small>
+          <%= link_to list.title, list %> <br><small>has <%= list.links.count %> links </small><br>
+          <small class="author">Created <%= time_ago_in_words(list.created_at) %> ago, by <%= list.user.name %></small>
+        </h2>
+    <% end %>
