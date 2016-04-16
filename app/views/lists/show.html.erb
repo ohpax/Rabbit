@@ -1,0 +1,22 @@
+
+<h2>
+  <%= @list.title %>
+</h2>
+
+<p>
+  <strong>Description:</strong>
+  <%= @list.description %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @list.public %>
+</p>
+
+<% @list.links.each do |link| %>
+	<%= render partial: link %>
+<% end %>
+<% if(@list.user == current_user) %>
+	<%= link_to 'Edit', edit_list_path(@list), class: "btn btn-default" %> |
+	<%= link_to 'Back', lists_path %>
+<% end %>

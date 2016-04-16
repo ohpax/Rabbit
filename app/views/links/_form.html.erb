@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="form-group">
+    <%= f.label :list %> <br>
+    <%= f.select(:list_id,[], {},{class: "form-control"}) do %>
+      <% @lists.each do |c| -%>
+      <%= content_tag(:option, c.title, value: c.id) %>
+  <% end %>
+    <% end %> 
+  </div>
   <div class="form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control" %>
